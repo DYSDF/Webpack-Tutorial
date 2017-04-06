@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>webpack 入门教程（七）</title>
+</head>
+<body>
+<h2>这是一个 Webpack 的入门教程</h2>
+<p>这个 DEMO 主要讲述 webpack 中如何使用 webpack-optimize 来进行代码输出优化</p>
+<p>因为默认输出的代码都是没有经过压缩丑化处理的，就体积上来说会比较大一点</p>
+<p>这个插件主要就是优化代码输出</p>
+<p>我们用其中的 UglifyJsPlugin 来进行代码压缩及丑化处理</p>
+<p>详细参数如下：</p>
+<pre><code>
+		new UglifyJsPlugin({
+			// 最紧凑的输出
+			beautify: false,
+			// 删除所有的注释
+			comments: false,
+			compress: {
+			  // 在UglifyJs删除没有用到的代码时不输出警告
+			  warnings: false,
+			  // 删除所有的 `console` 语句
+			  // 还可以兼容ie浏览器
+			  drop_console: true,
+			  // 内嵌定义了但是只用到一次的变量
+			  collapse_vars: true,
+			  // 提取出出现多次但是没有定义成变量去引用的静态值
+			  reduce_vars: true,
+			}
+		})
+	</code></pre>
+<p>具体请查看源码</p>
+<div id="app"></div>
+</body>
+</html>

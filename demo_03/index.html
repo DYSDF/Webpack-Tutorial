@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>webpack 入门教程（三）</title>
+</head>
+<body>
+	<h2>这是一个 Webpack 的入门教程</h2>
+	<p>这个 DEMO 主要讲述 webpack 中 module 和 loader 的使用</p>
+	<p>其实对于 module 参数，我们用的最多的就是 rules，它用来匹配文件并对其做相应的处理</p>
+	<p>rules 中的 test 支持正则，这就能帮组我们完全很多工作</p>
+	<p>而 use 则调用 loader 来实现文件处理</p>
+	<p>上一节中我们通过 webpack 实现了自动打包，但是打包完成的 js 文件并不完全是 ES5 标准的，所以在不同浏览器上的表现会很不一样</p>
+	<p>而这次，我们通过 module 调用 loader 来自动完成 ES6 的转换，引用的插件主要是：</p>
+	<ul>
+		<li>babel</li>
+		<li>babel-core</li>
+		<li>babel-loader</li>
+		<li>babel-preset-es2015</li>
+	</ul>
+	<p>具体请查看源码</p>
+	<div id="app" style="border: 1px solid;">
+		<h3>{{h2}}</h3>
+		<pre>
+			<code>
+				var app = document.querySelector("#app");
+			 	var vm = new Vue({
+				 	el: app,
+				 	// el: "#app"
+				 	data: {
+				 		h2: "这个部分完全就是用 Vue 构建出来的",
+				 		ul: {
+				 			li_1: ""
+				 		}
+				 	},
+				 	methods: {
+				 		alert: function(msg){
+				 			alert(msg)
+				 		}
+				 	}
+				})
+			</code>
+		</pre>
+		<p>主要需要了解的一下两点</p>
+		<ul>
+			<li>{{ul.li_1}}</li>
+			<li>{{ul.li_2}}</li>
+		</ul>
+		<span @click="alert('调用 Vue 实例方法成功')">点击我试试</span>
+	</div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>webpack 入门教程（一）</title>
+</head>
+<body>
+	<h2>这是一个 Webpack 的入门教程</h2>
+	<p>主要就是描述 webpack 的基本打包过程</p>
+	<p>这个页面引用的 js 文件就是通过 webpack 打包而来，没有引用外部链接或者转译器</p>
+	<p>代码完全符合 ES5 标准，所有 ES6 特性都会被转换</p>
+	<p>详细内容请查看源码</p>
+	<div id="app" style="border: 1px solid;">
+		<h3>{{h2}}</h3>
+		<pre>
+			<code>
+				var app = document.querySelector("#app");
+			 	var vm = new Vue({
+				 	el: app,
+				 	// el: "#app"
+				 	data: {
+				 		h2: "这个部分完全就是用 Vue 构建出来的",
+				 		ul: {
+				 			li_1: ""
+				 		}
+				 	},
+				 	methods: {
+				 		alert: function(msg){
+				 			alert(msg)
+				 		}
+				 	}
+				})
+			</code>
+		</pre>
+		<p>主要需要了解的一下两点</p>
+		<ul>
+			<li>{{ul.li_1}}</li>
+			<li>{{ul.li_2}}</li>
+		</ul>
+		<span @click="alert('调用 Vue 实例方法成功')">点击我试试</span>
+	</div>
+	<script src="public/js/main.js"></script>
+</body>
+</html>

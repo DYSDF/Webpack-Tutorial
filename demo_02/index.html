@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>webpack 入门教程（二）</title>
+</head>
+<body>
+	<h2>这是一个 Webpack 的入门教程</h2>
+	<p>这个 DEMO 主要讲述如何搭建一个本地 DevServer 服务器</p>
+	<p>因为作为一个前端开发人员，不可避免的需要有一个静态服务器用于展示我们的前台页面</p>
+	<p>幸运的是，webpack 提供了一个 devServer，可以用来作为静态服务器</p>
+	<p>通过 webpack-dev-server 来启动 devServer</p>
+	<p>这个页面可以通过访问 127.0.0.1:8080 地址的方式来访问</p>
+	<p>同时这个服务器支持热重载，也就是会自动同步我们修改的代码到浏览器上</p>
+	<div id="app" style="border: 1px solid;">
+		<h3>{{h2}}</h3>
+		<pre>
+			<code>
+				var app = document.querySelector("#app");
+			 	var vm = new Vue({
+				 	el: app,
+				 	// el: "#app"
+				 	data: {
+				 		h2: "这个部分完全就是用 Vue 构建出来的",
+				 		ul: {
+				 			li_1: ""
+				 		}
+				 	},
+				 	methods: {
+				 		alert: function(msg){
+				 			alert(msg)
+				 		}
+				 	}
+				})
+			</code>
+		</pre>
+		<p>主要需要了解的一下两点</p>
+		<ul>
+			<li>{{ul.li_1}}</li>
+			<li>{{ul.li_2}}</li>
+		</ul>
+		<span @click="alert('调用 Vue 实例方法成功')">点击我试试</span>
+	</div>
+</body>
+</html>
